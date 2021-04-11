@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <title>Coffee Run</title>
     <link rel=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/js/bootstrap.min.js>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+    <style>
+        form :focus:required:invalid {
+            border-color: #a94442;
+        }
+    </style>
 </head>
 
 <body class="container">
@@ -18,12 +25,12 @@
                 <form data-coffee-order="form">
                     <div class=form-group>
                         <label for="coffeeOrder">Coffee Order</label>
-                        <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
+                        <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+"/>
                     </div>
                     <div class=form-group>
                         <label for="emailInput">Email</label>
                         <input class="form-control" type="email" name="emailAddress" id="emailInput" value=""
-                            placeholder="dr@who.com">
+                            placeholder="dr@who.com" required>
                     </div>
                     <div class="radio"><label><input type="radio" name="size" value="short">Short</label></div>
                     <div class="radio"><label><input type="radio" name="size" value="tall" checked>Tall</label></div>
@@ -56,8 +63,12 @@
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <script src="scripts/firebaseconfig.js" charset="utf-8"></script>
+    <script src="scripts/validation.js" charset="utf-8"></script>
     <script src="scripts/checklist.js" charset="utf-8"></script>
     <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+    <script src="scripts/firebasedatastore.js" charset="utf-8"></script>
     <script src="scripts/datastore.js" charset="utf-8"></script>
     <script src="scripts/truck.js" charset="utf-8"></script>
     <script src="scripts/main.js" charset="utf-8"></script>
